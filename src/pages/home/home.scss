@@ -1,3 +1,74 @@
 page-home {
+  .logo-icon{
 
+    position: relative;
+    height: 62px;
+    width: 170px;
+    background-size: 170px,93px;
+    background-repeat: no-repeat;
+    background-image: url(/assets/imgs/logo-h.png);
+    margin-top: 23px;
+    margin-right: 22px;
+  }
+  .title{
+    margin: auto;
+
+  }
+  .main-row{
+    //height: 100%;
+    align-items: center;
+  }
+.ppl-icon{
+  //margin: auto;
+  margin-top: 66%;
+  height: 153px;
+  width: 170px;
+  background-size: 170px,93px;
+  background-repeat: no-repeat;
+
+  background-image: url("/assets/imgs/ppl.png");
+
+}
+.lost-cards{
+  background: #fff;
+}
+  .ppl-warning-icon{
+    //margin: auto;
+    margin-top: 66%;
+    height: 153px;
+    width: 170px;
+    background-size: 170px,93px;
+    background-repeat: no-repeat;
+
+    background-image: url("/assets/imgs/warning-icon.png");
+
+  }
+  .check-mark{
+
+    margin-top: 20%;;
+    /* margin: auto; */
+    height: 160px;
+    width: 125px;
+    background-size: 124px,152px;
+    background-repeat: no-repeat;
+
+
+    background-image: url("/assets/imgs/check-circle.png");
+
+  }
+  .status-ok{
+    background-color: #00CC7F;
+  }
+
+  .status-not-ok{
+    background-color: #E3193C;
+    color: white;
+
+
+
+  }
+
+  .white-background{
+    background: white;
+  }
 }

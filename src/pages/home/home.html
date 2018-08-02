@@ -1,17 +1,84 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+  <ion-navbar color="primary" >
+    <div class="logo-icon"  float-end no-padding	no-margin></div>
+
+   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content no-padding  [ngClass]="{'status-ok': (status == 1), 'status-unkown': (status == 0),'status-not-ok': (status == 2)}"   center="">
+
+
+  <ion-grid *ngIf="status == 2" class="main-row" align-items-center>
+    <ion-row  align-items-center>
+
+      <div class="ppl-warning-icon"  >
+      </div>
+
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h2 class="title" dir="rtl" >  {{losts.length}} <span item-start > مفقودين</span>   </h2>
+      </ion-col>
+
+    </ion-row>
+
+
+  </ion-grid>
+  <ion-row no-padding  class="lost-cards" *ngIf="status == 2">
+    <ion-col>
+      <ion-card *ngFor="let lost of losts">
+        <ion-card-header>
+          <ion-item>
+            <ion-avatar item-start *ngIf="lost.visitor.image">
+              <!--<img src="./assets/imgs/dalal.png">-->
+              <img src="data:image/jpeg;base64,{{lost.visitor.image}}">
+            </ion-avatar>
+            <h2>{{lost.visitor.firstName}}  {{lost.visitor.lastName}}</h2>
+            <p>  مفقود منذ  {{lost.lostPeriod}} دقيقة</p>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+          <button ion-button icon-start>
+            <ion-icon name="md-chatbubbles"></ion-icon>
+            أرسل رسالة
+          </button>
+
+          <!-- Float the icon right -->
+          <button ion-button icon-start>
+            <ion-icon name="md-locate"></ion-icon>
+            موقع الحاج
+
+          </button>
+
+        </ion-card-content>
+      </ion-card>
+
+
+    </ion-col>
+
+  </ion-row>
+  <ion-grid *ngIf="status == 1" class="main-row" align-items-center>
+    <ion-row  align-items-center>
+
+      <div class="ppl-icon"  >
+      </div>
+
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h2 class="title">الحجاج مكتملين</h2>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="check-mark"></div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+
+  <!--<button (click)="clickme()"> sds </button>-->
 </ion-content>
