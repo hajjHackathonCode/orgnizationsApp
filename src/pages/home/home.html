@@ -7,7 +7,6 @@
 
 <ion-content no-padding  [ngClass]="{'status-ok': (status == 1), 'status-unkown': (status == 0),'status-not-ok': (status == 2)}"   center="">
 
-
   <ion-grid *ngIf="status == 2" class="main-row" align-items-center>
     <ion-row  align-items-center>
 
@@ -38,13 +37,13 @@
           </ion-item>
         </ion-card-header>
         <ion-card-content>
-          <button ion-button icon-start>
-            <ion-icon name="md-chatbubbles"></ion-icon>
+          <button ion-button icon-start (click)="clickme()">
+            <ion-icon name="md-chatbubbles" ></ion-icon>
             أرسل رسالة
           </button>
 
           <!-- Float the icon right -->
-          <button ion-button icon-start>
+          <button ion-button icon-start (click)="findOnMap(lost)">
             <ion-icon name="md-locate"></ion-icon>
             موقع الحاج
 

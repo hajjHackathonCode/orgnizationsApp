@@ -15,6 +15,12 @@ import { EstimoteBeacons } from '@ionic-native/estimote-beacons';
 import {HttpClientModule} from "@angular/common/http";
 import {MomentModule} from "angular2-moment";
 import {LocalNotifications} from "@ionic-native/local-notifications";
+import { GoogleMaps } from '../providers/google-maps/google-maps';
+import { Connectivity } from '../providers/connectivity/connectivity';
+import MapPanes = google.maps.MapPanes;
+import {MapsPage} from "../pages/maps/maps";
+import { Network } from '@ionic-native/network';
+import {Geolocation} from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
@@ -23,13 +29,16 @@ import {LocalNotifications} from "@ionic-native/local-notifications";
     ContactPage,
     HomePage,
     LoginPage,
-    TabsPage
+    TabsPage,
+    MapsPage
+
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     MomentModule,
+
 
   ],
   bootstrap: [IonicApp],
@@ -40,13 +49,18 @@ import {LocalNotifications} from "@ionic-native/local-notifications";
     HomePage,
     TabsPage,
     LoginPage,
+    MapsPage
   ],
   providers: [
     StatusBar,
-    LocalNotifications,
+     LocalNotifications,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    EstimoteBeacons
+    EstimoteBeacons,
+    GoogleMaps,
+    Connectivity,
+    Geolocation,
+    Network
   ]
 })
 export class AppModule {}
