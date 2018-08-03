@@ -22,8 +22,7 @@ export class HomePage {
   beconTrackerDisposal
   listOfBeacons = [];
   listOfOutOfRangeBeacons = [
-    "d640cd95516a",
-    "dcabc717ed9e"];
+    "d640cd95516a"];
   listOfOutOfRange  = [];
 
   constructor(private localNotifications: LocalNotifications, public navCtrl: NavController,private eb: EstimoteBeacons, private http : HttpClient) {
